@@ -84,19 +84,19 @@ Now's the point in the story that I realize that Microstepping is not a free-lun
 
 I was just about to start working on a reduction gear setup, and all the complexity that goes with that, when I decide, well, let's see if a less aggressive microstep might have enough power. I mean, I was able to turn the shaft with my fingers and no leverage, so it couldn't be that much torque needed! Lo and behold, a 1/16 step was the ticket.  Clock divisor of 255 and (23,500,23,500) gave me the pulse width (150ms - rock solid measured on oscilloscope!) I needed and it seemed to be able to turn reliably! (Foreshadowing Alert!)
 
-### Putting it all together...
+## Putting it all together...
 So, now whate we have are three major components:
 1. The scope itself
 1. The electronics to drive the motors
 1. The controller
 
-#### Scope
+### Scope
 So, after some extended prints for the motor mounts and gears, finally got around to putting everything together!
 ![Full Setup](img/full-scope.jpg)
 
 The red gears on the RA axis, and the black gears on the declination axis. They are both 1:1 gear sets, and press-fit onto their respective shafts. The motor mount 3D prints have some room to adjust the exact position of the motor for gear meshing.
 
-#### Motor Driver Electronics
+### Motor Driver Electronics
 This part is pretty straightforward. Power comes from a Ryobi 18V battery and a plug-in for that. That power goes straight to the two motor controllers, and feeds into a buck converter to step it down to the 3.3v that the ESP32 needs to operate.
 ![Driver Electronics](img/motor-driver.jpg)
 
@@ -110,10 +110,10 @@ Discovered a few things...
 * 18V 4Ah battery will run in that configuration for at least 4 hours. This is a worst case. Most of the time when observing, you won't have the DEC axis in holding mode...really no reason for it.
 * The DEC motor in "holding" mode runs HOT.  Thermocouple measured it at about 70C...this is important. I had printed to motor mount for this motor in PLA, which begins to deform at about 60C!  Well, back to print it in ABS then!
 
-#### Controller
+### Controller
 Got the controller dialed in nicely.  I included some buttons to calibrate and save the RA tracking speed to an EEPROM in the controller so I don't have to worry about changing my code to update it.  It sends commands reliably to the motor driver ESP32 and they get executed nicely.  Did a nice long (6 hours) test with the RA motor on the mount without the scope (foreshadowing alert!) and worked beautifully.  I even used a digital level to calibrate the speed before going out to the dark skies, calibrating the mount for 1 revolution ever 23h 56min (sideral day)
 
-#### Oops
+### Oops
 OK, so I have everything printed and mounted. My first "Dammit" moment occurred when I hooked everything up and went to set the motor driver electronics down...the cable for the RA axis was just about right, but the dec cable was too short to sit below the scope.  No big deal, just need a stool to raise it off the ground (probably for the best...let's continue).
 
 RA motor test:  Great, tracking nicely it appears.

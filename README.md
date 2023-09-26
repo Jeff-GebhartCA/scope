@@ -127,3 +127,6 @@ So, with that I have two options to increase torque:  I could change the stepper
 I reworked my gears between the motor and shaft to be a 2:1 ratio.  So, now, my settings from the 1/16 stepping would work the same at 1/8 (with a 2:1 gear ratio now) PLUS, with that gear ratio, I could deliver double to torque to the shaft. So, I'd get more torque from the new microstepping setting + more torque from the gears!  And I had to reprint my dec gears anyway, so might as well add the torque to them too...7:24 minute print at high strength settings and voila.
 ![New Gears](img/new-gears.jpeg).
 
+
+![Link To This GitHub](img/GitHubLink.png)
+https://s12d.com/JeffDGScope
